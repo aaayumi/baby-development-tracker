@@ -1,38 +1,31 @@
 import React, { useState }from 'react';
 import { TodoListItem }from './TodoListItem'
-import { FirstQuestion }from './FirstQuestion'
 
-const todos: Todo[] = [{
-  text: 'Lifts head when on his tummy',
-  isCompleted: false
-},{
-  text: 'Responds to sound',
-  isCompleted: false
-},
-{
-  text: 'Stares at faces',
-  isCompleted: false
-},
-{
-  text: 'Turns head towards light',
-  isCompleted: false
-},
-{
-  text: 'Can see black-and-white patterns',
-  isCompleted: false
-},
-]
+const todos: Todo[] = [ 
+{month: 1, text: 'bla'},
+{month: 2, text: 'wowowo'}, 
+{month: 3, text: 'bls0k22a'},
+{month: 4, text: 'bl2o2oo2a'},
+{month: 5, text: 'bl2oo2o222a'},
+{month: 6, text: 'bla'},
+{month: 7, text: 'bla'},
+{month: 8, text: 'bla'},
+{month: 9, text: 'bla'},
+{month: 10, text: 'bla'},
+{month: 11, text: 'bla'},
+{month: 12, text: 'bla'},];
 
 const App: React.FC = () => {
-const [inputValue, setInputValue] = useState('0');
+const [inputValue, setInputValue] = useState(0);
+
   return <>
    <div>
      How many months is your baby?
-     <input type='number' min='0' value={inputValue}
-     onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {setInputValue(e.target.value)}}
+     <input type='number' min='0' max='12' value={inputValue}
+     onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {setInputValue(parseInt(e.target.value))}}
      />
      </div>
-   <TodoListItem todo={todos} />
+     {inputValue > 0 && <TodoListItem todo={todos} input={inputValue} />}
   </>
 }
 

@@ -1,4 +1,4 @@
 interface Todo {
-	text: string;
-	isCompleted: boolean;
+	month: number,
+	text: string
 }
