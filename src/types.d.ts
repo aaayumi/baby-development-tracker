@@ -1,4 +1,4 @@
 interface Todo {
 	month: number,
-	text: string
+	text: Array<string>
 }
