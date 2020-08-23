@@ -1,4 +1,4 @@
-export const todos: Todo[] = [ 
+export const checks: Check[] = [ 
 {month: 1, text: ['Lifts head when on his tummy',
 'Responds to sound',
 'Stares at faces',

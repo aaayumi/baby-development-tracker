@@ -1,32 +1,19 @@
 import React, { useState }from 'react';
-import { TodoListItem }from './TodoListItem'
-import { todos } from './Data'
-
-// const todos: Todo[] = [ 
-// {month: 1, text: ['bla','bla']},
-// {month: 2, text: ['bla']}, 
-// {month: 3, text: ['bla']},
-// {month: 4, text: ['bla']},
-// {month: 5, text: ['bla']},
-// {month: 6, text: ['bla']},
-// {month: 7, text: ['bla']},
-// {month: 8, text: ['bla']},
-// {month: 9, text: ['bla']},
-// {month: 10, text: ['bla']},
-// {month: 11, text: ['bla']},
-// {month: 12, text: ['bla']},];
+import { CheckListItem }from './CheckListItem'
+import { checks } from './Data'
+import './App.css'
 
 const App: React.FC = () => {
 const [inputValue, setInputValue] = useState(0);
 
   return <>
-   <div>
+   <div className='question'>
      How many months is your baby?
      <input type='number' min='0' max='12' value={inputValue}
      onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {setInputValue(parseInt(e.target.value))}}
-     />
+     /> months
      </div>
-     {inputValue > 0 && <TodoListItem todo={todos} input={inputValue} />}
+     {inputValue > 0 && <CheckListItem check={checks} input={inputValue} />}
   </>
 }
 
